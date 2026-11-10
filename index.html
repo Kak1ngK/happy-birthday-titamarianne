@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday Marianne! 💜</title>
+    <!-- Google Fonts for cute typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Confetti Canvas overlay -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- SCREEN 1: INTRODUCTION -->
+    <div id="screen-1" class="screen active text-center">
+        <div class="card intro-card">
+            <h1 class="title font-cursive fade-in-up">WAZAPPP MANANAP</h1>
+            <p class="subtitle font-cute fade-in-up delay-1">Tagnaa unsa ni HUWAWERS!</p>
+            <div class="fade-in-up delay-2">
+                <button onclick="goToScreen(1, 2)" class="btn-cute">
+                    I TUKLOK FLESS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: THE CAKE & WISH -->
+    <div id="screen-2" class="screen text-center">
+        <div class="container">
+            <h2 class="heading font-cursive">HAPPY 19TH BIRTHDAYYY, <br>MARIANNE!</h2>
+            
+            <!-- Virtual Cake -->
+            <div class="cake-wrapper">
+                <div class="plate"></div>
+                <div class="cake">
+                    <div class="cake-layer-line"></div>
+                </div>
+                <div class="glaze">
+                    <div class="drip drip-1"></div>
+                    <div class="drip drip-2"></div>
+                    <div class="drip drip-3"></div>
+                    <div class="drip drip-4"></div>
+                    <div class="drip drip-5"></div>
+                    <div class="drip drip-6"></div>
+                </div>
+                <div class="topper">19th</div>
+                <div class="candle">
+                    <div id="flame" class="flame"></div>
+                    <div id="smoke" class="smoke"></div>
+                </div>
+            </div>
+
+            <p class="tagline font-cute">
+                "BEPOR EBRETING DO I APPRECIATE SA IMO SELFFF YEHEYYY ."
+            </p>
+
+            <div id="wish-container" class="wish-card">
+                <p id="wish-text" class="wish-title font-cute">MAKE A WISHHH DOOOO</p>
+                <button id="btn-ready" onclick="readyToWish()" class="btn-cute btn-blue full-width">
+                    READY NA??
+                </button>
+                <button id="btn-blow" onclick="blowCandle()" class="btn-cute full-width hidden">
+                    TAYUPIII NA HAHAHA!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: MESSAGE & HIDDEN SURPRISE -->
+    <div id="screen-3" class="screen">
+        <div class="container full-width">
+            <div class="letter-card">
+                <h2 class="letter-title font-cursive">YEHEYYY PBIRTHDAY DO!</h2>
+                <div class="letter-body font-cute">
+                    <p>
+                        Pbirthday againnn dooo!! HAHAHAHAHA kani do rag tarung2 na ni kay wa jud ko nakatarung gabii do hehe 🎂 WAHAHAHAHA
+                    </p>
+                    <p>
+                        amping pirmi do ayaw sigeg ingug patay2 kay nananana stay healthy dooo ayaw na sige kaon ug processed food, ampingi imong self kay usa ra baya na imong lawas HAHAHAHAHA
+                    </p>
+                    <p>
+                        ayaw sigeg kaguol or ka-stress dara ha. Nara ra ko diri always mamikon nimo so better get used to me na WAHAHAHAHA mwa mwaaa happy birthday againnn dooo!! 💖
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center" id="surprise-trigger-container">
+                <button onclick="revealSurprise()" class="btn-cute btn-blue animate-bounce">
+                    HALAAA WAITTTT
+                </button>
+            </div>
+
+            <!-- Hidden Message Container -->
+            <div id="hidden-surprise" class="hidden surprise-box">
+                <div class="reminder-card">
+                    <span class="sparkle-icon">✨</span>
+                    <h3 class="reminder-title font-cursive">Reminder:</h3>
+                    <p class="reminder-body font-cute">
+                        19 na you now dooo HAHAHAHAHA pero ayaw sa pagdali2 sa tanan ha you don't have to figure everything now dayurnnn... Enjoy lang sa imong little moments gud, take your time, ayaw sigeg pressure sa imong self and always remember na you deserve good things sab. Amping pirmi do, stay healthy and be happy kay gusto pa ko mamikon nimo for a longgggggg time WAHAHAHAHA mwaaa 💙
+                    </p>
+                </div>
+                
+                <div class="text-center margin-top-lg">
+                    <button onclick="goToScreen(3, 4)" class="btn-cute">
+                        Padayon 👉
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: FINAL SCREEN -->
+    <div id="screen-4" class="screen text-center">
+        <div class="card final-card">
+            
+            <!-- Cute animated cake SVG icon -->
+            <div class="svg-container">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pulse-icon">
+                    <path d="M12 2L12 7" stroke="#c2a3d1" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 7C11.4477 7 11 7.44772 11 8V10H13V8C13 7.44772 12.5523 7 12 7Z" fill="#ffda6a"/>
+                    <path d="M4 16H20V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V16Z" fill="#3b2217"/>
+                    <path d="M4 14C4 12.8954 4.89543 12 6 12H18C19.1046 12 20 12.8954 20 14V16H4V14Z" fill="#c2a3d1"/>
+                    <path d="M6 16C6 17.1046 6.89543 18 8 18C9.10457 18 10 17.1046 10 16" stroke="#c2a3d1" stroke-width="2"/>
+                    <path d="M14 16C14 17.1046 14.8954 18 16 18C17.1046 18 18 17.1046 18 16" stroke="#c2a3d1" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <h2 class="final-title font-cursive">ONCE AGAINNN, HAPPY 19TH BIRTHDAY, DOOOO!</h2>
+            
+            <p class="final-body font-cute">
+                "May this new chapter be kinder to you dooo. moreee kalagot, kasamok, kakapoy, aydahhh og ambot to comeee HAHAHAHAHA more peace, happiness and good things to come unta. perks syempre padayon rag reklamo sa life kay mao naman jud na imong naandan WAHAHAHAHAHA"
+            </p>
+            
+            <div class="badge">
+                <p class="badge-text font-cute">DESERVE NIMO NI DO 💜</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
